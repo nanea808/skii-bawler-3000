@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
-    void onTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "enemy") {
-            print("");
+    void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "goal") {
+            Debug.Log("ENTER");
+            //TODO: make a destroy timer
+            // Destroy(gameObject);
         }
     }
 
-    void onTriggerStay(Collider other) {
-        
-    }
+    // void OnTriggerStay(Collider other) {
+    //     if(other.gameObject.tag == "goal") {
+    //         Debug.Log("STAY");
+    //     }
+    // }
 
-    void onTriggerExit(Collider other) {
-        
+    void OnTriggerExit(Collider other) {
+        if(other.gameObject.tag == "goal") {
+            Debug.Log("EXIT");
+        }
     }
 }
